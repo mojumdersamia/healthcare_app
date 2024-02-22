@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:healthcare_app/screens/home_screen.dart';
 import 'package:healthcare_app/screens/login_screen.dart';
 
+import 'navbar_roots.dart';
+
 class SignupScreen extends StatefulWidget{
   const SignupScreen({super.key});
 
@@ -85,7 +87,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HomeScreen()));
+                              builder: (context) => NavBarRoots()));
                     },
                     child: const Padding(
                       padding:

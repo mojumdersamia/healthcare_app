@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:healthcare_app/screens/home_screen.dart';
 import 'package:healthcare_app/screens/sign_up_screen.dart';
 
+import 'navbar_roots.dart';
+
 class LoginScreen extends StatefulWidget {
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -73,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HomeScreen()));
+                              builder: (context) => NavBarRoots()));
                     },
                     child: const Padding(
                       padding:
@@ -105,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         context,
                         MaterialPageRoute(
                         builder: (context)
-                    =>SignupScreen()
+                    =>const SignupScreen()
                     ));
                   },
                       child: const Text('Create Account', style: TextStyle(

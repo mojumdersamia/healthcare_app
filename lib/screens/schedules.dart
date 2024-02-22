@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthcare_app/screens/upcoming.dart';
 
 class ScheduleScreen extends StatefulWidget{
   @override
@@ -10,7 +11,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
  int _buttonIndex= 0;
  final _scheduleWidgets = [
   // UpcomingSchedule(),
-   Center(child: Text('Upcoming'),),
+   Upcoming(),
    Center(child: Text('Completed'),),
    Center(child: Text('Canceled'),),
    //UpcomingSchedule(),
@@ -24,7 +25,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
        child: Column(
          crossAxisAlignment: CrossAxisAlignment.start,
          children: [
-           Padding(padding: EdgeInsets.symmetric(horizontal: 15),
+           const Padding(padding: EdgeInsets.symmetric(horizontal: 10),
            child: Text(
              'Schedule',
              style: TextStyle(
@@ -43,61 +44,72 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
              child: Row(
                mainAxisAlignment: MainAxisAlignment.center,
                children: [
-                 InkWell(
-                   onTap: (){
-                     setState(() {
-                       _buttonIndex = 0;
-                     });
-                   },
-                   child: Container(
-                     padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-                     decoration: BoxDecoration(
-                       borderRadius: BorderRadius.circular(10),
-                       color: _buttonIndex == 0? Color(0xFF7165D6):Colors.transparent
+                 Expanded(
+                   child: InkWell(
+                     onTap: (){
+                       setState(() {
+                         _buttonIndex = 0;
+                       });
+                     },
+                     child: Container(
+                       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                       decoration: BoxDecoration(
+                         borderRadius: BorderRadius.circular(10),
+                         color: _buttonIndex == 0?const Color(0xFF7165D6): Colors.transparent
+                       ),
+                       child: Text('Upcoming',
+                       style: TextStyle(
+                         fontSize: 16,
+                         fontWeight: FontWeight.w500,
+                           color: _buttonIndex == 0? Colors.white :Colors.black38
+                       ),),
                      ),
-                     child: Text('Upcoming',
-                     style: TextStyle(
-                       fontSize: 16,
-                       fontWeight: FontWeight.w500
-                     ),),
                    ),
                  ),
-                 InkWell(
-                   onTap: (){
-                     setState(() {
-                       _buttonIndex = 1;
-                     });
-                   },
-                   child: Container(
-                     padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-                     decoration: BoxDecoration(
-                       borderRadius: BorderRadius.circular(10),
-                         color: _buttonIndex == 1? Color(0xFF7165D6):Colors.transparent
+                 
+                 Expanded(
+                   child: InkWell(
+                     onTap: (){
+                       setState(() {
+                         _buttonIndex = 1;
+                       });
+                     },
+                     child: Container(
+                       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                       decoration: BoxDecoration(
+                         borderRadius: BorderRadius.circular(10),
+                           color: _buttonIndex == 1?Color(0xFF7165D6): Colors.transparent
+                       ),
+                       child: Text('Completed',
+                       style: TextStyle(
+                         fontSize: 16,
+                         fontWeight: FontWeight.w500,
+                           color: _buttonIndex == 1? Colors.white :Colors.black38
+                       ),),
                      ),
-                     child: Text('Completed',
-                     style: TextStyle(
-                       fontSize: 16,
-                       fontWeight: FontWeight.w500
-                     ),),
                    ),
                  ),
-                 InkWell(
-                   onTap: (){
-                     setState(() {
-                       _buttonIndex = 2;
-                     });
-                   },
-                   child: Container(
-                     padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-                     decoration: BoxDecoration(
-                       borderRadius: BorderRadius.circular(10),
-                         color: _buttonIndex == 2? Color(0xFF7165D6):Colors.transparent
+
+                 Expanded(
+                   child: InkWell(
+                     onTap: (){
+                       setState(() {
+                         _buttonIndex = 2;
+                       });
+                     },
+                     child: Container(
+                       padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                       decoration: BoxDecoration(
+                         borderRadius: BorderRadius.circular(10),
+                           color: _buttonIndex == 2?Color(0xFF7165D6): Colors.transparent
+                       ),
+                       child: Text('Canceled',
+                       style: TextStyle(
+                         fontSize: 16,
+                         fontWeight: FontWeight.w500,
+                           color: _buttonIndex == 2? Colors.white :Colors.black38
+                       ),),
                      ),
-                     child: Text('Canceled',
-                     style: TextStyle(
-                       fontSize: 16,
-                       fontWeight: FontWeight.w500
-                     ),),
                    ),
                  ),
                ],

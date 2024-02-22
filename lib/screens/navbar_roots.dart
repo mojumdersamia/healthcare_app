@@ -42,7 +42,7 @@ selectedItemColor: Color(0xFF7165D6),
              _selectedIndex = index;
            });
          },
-         items: [
+         items: const [
            BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: "Home"),
            BottomNavigationBarItem(icon: Icon(CupertinoIcons.chat_bubble_text_fill),label: "Messages"),
            BottomNavigationBarItem(icon: Icon(Icons.calendar_month),label: "Schedule"),
